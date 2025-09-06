@@ -1,21 +1,13 @@
 def count_positive(numbers: list[float]) -> int:
 
-    count = 0  # Счётчик положительных чисел
-    for num in numbers:  # Проходим по каждому числу в списке
-        if num > 0:      # Проверяем, больше ли число нуля
-            count += 1   # Если да, увеличиваем счётчик на 1
-    return count        # Возвращаем итоговое количество
-
-# Основная часть программы — ввод чисел пользователем
-nums = []  # Создаём пустой список для чисел
-
-# Цикл для ввода 5 чисел
+    count = 0
+    for num in numbers:
+        if num > 0:
+            count += 1
+    return count
+nums = []
 for i in range(5):
-    n = float(input(f"Введите число {i+1}: "))  # Ввод числа с клавиатуры, преобразуем в float
-    nums.append(n)  # Добавляем число в список
-
-# Вызываем функцию и сохраняем результат
+    n = float(input(f"Введите число {i+1}: "))
+    nums.append(n)
 positive_count = count_positive(nums)
-
-# Выводим результат
 print(f"Количество положительных чисел: {positive_count}")
