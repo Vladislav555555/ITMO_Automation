@@ -9,7 +9,7 @@ task_2()
 
 
 
-from typing import List
+
 def task_2() -> list[int]:
     a = [1, 2, 3, 5, 8, 13, 21]
     return a[:3]

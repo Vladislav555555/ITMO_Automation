@@ -1,4 +1,4 @@
-class SidebarButton:
+class Button:
     def __init__(self, text, locator=""):
         self.text = text
         self.type = "Кнопка"
@@ -6,7 +6,6 @@ class SidebarButton:
 
     def click(self):
         return f"Клик по кнопке {self.text}"
-
 
 if __name__ == "__main__":
     button_texts = [
@@ -18,8 +17,8 @@ if __name__ == "__main__":
         "Links",
         "Broken Links - Images",
         "Upload and Download",
-        "Dynamic Properties"
-        "Practice Form"
+        "Dynamic Properties",
+        "Practice Form",
         "Browser Windows",
         "Alerts",
         "Frames",
@@ -45,7 +44,7 @@ if __name__ == "__main__":
         "Book Store API",
     ]
 
-    buttons = [SidebarButton(text) for text in button_texts]
+    buttons = [Button(text) for text in button_texts]
 
     for btn in buttons:
         print(btn.text)
