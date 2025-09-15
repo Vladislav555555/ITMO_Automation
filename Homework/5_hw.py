@@ -1,45 +1,24 @@
 
-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 
-driver = webdriver.Chrome()
-driver.get("https://www.saucedemo.com/")
+def check_elements():
 
-try:
-    user_name = driver.find_element(By.CSS_SELECTOR, '#user-name')
-    password = driver.find_element(By.CSS_SELECTOR, '#password')
-    login_button = driver.find_element(By.CSS_SELECTOR, '#login-button')
-
-    if user_name and password and login_button:
-        print("Поле успешно найдено!")
-
-except NoSuchElementException:
-    print("Поле не найдено!")
-
-
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.common.exceptions import NoSuchElementException
-
-
-
-def check_elements(driver, selectors):
+    driver = webdriver.Chrome()
 
     try:
-        for selector in selectors:
-            driver.find_element(By.CSS_SELECTOR, selector)
-        return True
+
+        driver.get("https://www.saucedemo.com/")
+
+        username_field = driver.find_element(By.ID, "user-name")
+        password_field = driver.find_element(By.ID, "password")
+        login_button = driver.find_element(By.ID, "login-button")
+
+
+        if username_field and password_field and login_button:
+            print("Элементы найдены")
     except NoSuchElementException:
-        return False
-
-driver = webdriver.Chrome()
-driver.get("https://www.saucedemo.com/")
-
-selectors = ['#user-name', '#password', '#login-button']
-
-if check_elements(driver, selectors):
-    print("Все поля успешно найдены!")
-else:
-    print("Не удалось найти одно из полей.")
+        print("Не все элементы найдены")
+    finally:
+        driver.quit()
