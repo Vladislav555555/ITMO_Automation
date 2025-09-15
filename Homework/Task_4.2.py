@@ -13,7 +13,7 @@ class Math:
 
     def division(self, a, b):
         if b == 0:
-            print("Ошибка. На ноль делить нельзя !")
+            print("Ошибка. На ноль делить нельзя!")
         else:
             result = a / b
             print(f"Деление: {a} / {b} = {result}")
@@ -22,8 +22,9 @@ class Math:
         result = a - b
         print(f"Вычитание: {a} - {b} = {result}")
 
-Test = Math(0, 0)
-Test.addition(17, 8)
-Test.multiplication(59, 3)
-Test.division(8, 7)
-Test.subtraction(12, 6)
+
+calculator = Math(0, 0)
+calculator.addition(17, 8)
+calculator.multiplication(59, 3)
+calculator.division(8, 7)
+calculator.subtraction(12, 6)

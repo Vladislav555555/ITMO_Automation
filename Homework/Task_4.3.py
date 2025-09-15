@@ -7,6 +7,7 @@ class Button:
     def click(self):
         return f"Клик по кнопке {self.text}"
 
+
 if __name__ == "__main__":
     button_texts = [
         "Text Box",
@@ -37,7 +38,7 @@ if __name__ == "__main__":
         "Selectable",
         "Resizable",
         "Droppable",
-        "Dragabble",
+        "Draggable",
         "Login",
         "Book Store",
         "Profile",
@@ -46,10 +47,10 @@ if __name__ == "__main__":
 
     buttons = [Button(text) for text in button_texts]
 
-    for btn in buttons:
-        print(btn.text)
+    for button in buttons:
+        print(button.text)
 
     print()
 
-    for btn in buttons:
-        print(btn.click())
+    for button in buttons:
+        print(button.click())
